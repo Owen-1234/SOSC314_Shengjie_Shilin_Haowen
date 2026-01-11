@@ -6,6 +6,6 @@
 
 ### Research Topic & Objective
 
-This project investigates the divergent narratives surrounding "Energy Transition" and "Carbon Neutrality" between Western mainstream media and Chinese state-affiliated English media. By analyzing articles from 2020 to the present, the study aims to quantify how different national entities "frame" climate policy to align with their respective geopolitical interests and domestic agendas.
+This project investigates the narratives about "Energy Transition" and "Carbon Neutrality" between Western mainstream media and Chinese state-affiliated media. By analyzing articles from 2020 to the present, the study aims to quantify how different national entities "frame" climate policy to align with their respective geopolitical interests and domestic agendas.
 
 
