@@ -2,7 +2,7 @@
 
 # Project Proposal: Narrative Competition in the Global Energy Transition
 
-## A Cross-National Computational Analysis of Media Framing (2020–2026)
+## A Cross-National Computational Analysis of Media(2020–2026)
 
 ### Research Topic & Objective
 
