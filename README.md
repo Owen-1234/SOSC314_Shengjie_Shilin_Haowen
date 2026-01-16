@@ -45,8 +45,8 @@ The dataset consists of **7,000+ English articles** collected via the GDELT API 
 
 We employ a multi-stage Machine Learning pipeline to analyze the corpora:
 
-1. 
-**Automated Collection:** Using `gdeltdoc` for metadata and `newspaper3k` for text extraction.
+
+1. **Automated Collection:** Using `gdeltdoc` for metadata and `newspaper3k` for text extraction.
 
 
 2. **Structural Topic Modeling (STM):** Analyzing how "Media Source" and "Time" influence topic prevalence.
@@ -60,12 +60,11 @@ We employ a multi-stage Machine Learning pipeline to analyze the corpora:
 
 ```text
 ├── data/                   # Processed article data (CSV/JSON)
-├── notebooks/              # Jupyter notebooks for exploratory analysis
-│   ├── 01_preprocessing.ipynb
-│   └── 02_lexical_analysis.ipynb
-├── scripts/                # R/Python scripts for heavy modeling
+├── code/              # Jupyter notebooks for exploratory analysis
+│   ├── 01_Datagathering.ipynb
+│   └── 02_DataCleaning.ipynb
+│   └── 03_WordCloud.ipynb
 ├── visualizations/         # Exported plots and interactive HTML maps
-[cite_start]├── website/                # Source code for GitHub Pages [cite: 81]
 └── README.md
 
 ```
@@ -74,13 +73,8 @@ We employ a multi-stage Machine Learning pipeline to analyze the corpora:
 
 ##  Academic Context
 
-* 
 **Course:** SOSC 314: Computational Social Science 
 
-
-* 
 **Instructor:** [Markus Neumann](https://markusneumann.github.io/) 
 
-
-* 
 **Institution:** Duke Kunshan University 
