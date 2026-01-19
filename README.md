@@ -14,7 +14,7 @@ The core research question asks: *How do the lexical features and thematic struc
 
 * **[Dataset](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Data)**: Access the processed CSV files of 7,000+ articles.
 * **[ Text Preprocessing](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Code)**: Scripts for tokenization, N-grams, and data cleaning.
-* **[Visulazations](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Image)**: Structural Topic Modeling with covariates.
+* **[Visulazations](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Image)**: Word Cloud.
 
 
 
