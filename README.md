@@ -1,19 +1,19 @@
 # SOSC314: Narrative Competition in Global Energy Transition
 ### A Cross-National Media Analysis (2020-2026)
 
-## 🚀 Project Overview
+##  Project Overview
 This project is the final capstone for **SOSC 314: Computational Social Science** at Duke Kunshan University. It explores the "narrative divide" between Western and Chinese media regarding climate policy and energy transition. By leveraging 7,000 news articles, we investigate how different national entities use language to frame responsibility, energy security, and the transition to a low-carbon future.
 
 ---
 
-## 🔗 Quick Links
+##  Quick Links
 * **[Dataset](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Data)**: 7,000+ processed articles and **Weighted Frequency results**.
 * **[Code](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Code)**: Scripts for Context Extraction (Sliding Window), Data Cleaning, and Visualization.
 * **[Visualizations](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Image)**: High-res narrative comparison charts and Word Clouds.
 
 ---
 
-## 📊 Narrative Frequency Analysis & Measurement
+##  Narrative Frequency Analysis & Measurement
 To ensure a fair comparison between the Chinese corpus (5,000 articles) and the Western corpus (2,000 articles), we implemented a **Weighted Measurement Strategy**. 
 
 Instead of raw counts, we calculate the density of a concept per 1,000 articles:
@@ -27,7 +27,7 @@ We developed a Python-based **Context Extraction** script that captures all toke
 
 ---
 
-## 🛠 Methodology & Tech Stack
+##  Methodology & Tech Stack
 1. **Automated Collection:** Using `gdeltdoc` and `newspaper3k`.
 2. **Standardized Measurement:** Weighted frequency normalization to balance corpus sizes.
 3. **Context Mining:** Proximity-based extraction (20-word window) for narrative precision.
@@ -36,7 +36,7 @@ We developed a Python-based **Context Extraction** script that captures all toke
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 ```text
 ├── Data/
 │   ├── raw/                    # Original datasets
@@ -45,8 +45,8 @@ We developed a Python-based **Context Extraction** script that captures all toke
 │   ├── 01_DataGathering.ipynb
 │   ├── 02_DataCleaning.ipynb
 │   ├── 03_ContextExtraction.ipynb # Context-aware keyword mining
-│   └── 04_Visualization.ipynb     # High-res bar charts & WordCloud
+│   └── 04_Frequency.ipynb     # High-res bar charts & WordCloud
 ├── Image/
 │   ├── WordCloud.png
-│   └── Narrative_Comparison_Final.png # Standardized comparison chart
+│   └── Frequency.png # Standardized comparison chart
 └── README.md
