@@ -14,14 +14,14 @@ This project is the final capstone for **SOSC 314: Computational Social Science*
 ---
 
 ##  Narrative Frequency Analysis & Measurement
-To ensure a fair comparison between the Chinese corpus (5,000 articles) and the Western corpus (2,000 articles), we implemented a **Weighted Measurement Strategy**. 
+To ensure a fair comparison between the Chinese corpus (5,000 articles) and the Western corpus (2,000 articles), we implemented a Weighted Measurement Strategy 
 
 Instead of raw counts, we calculate the density of a concept per 1,000 articles:
 
 $$ \text{Weighted Frequency} = \left( \frac{\text{Raw Token Count}}{\text{Total Articles in Corpus}} \right) \times 1000 $$
 
 ### Context Extraction (Sliding Window)
-We developed a Python-based **Context Extraction** script that captures all tokens within a **20-word radius** of our core seed terms (*Energy Transition*, *Carbon Neutrality*, *Climate Policy*). This allows us to filter out general news noise and focus exclusively on the conceptual vocabulary surrounding energy topics.
+We developed a Python-based Context Extractionn script that captures all tokens within a 20-word radius of our core seed terms (*Energy Transition*, *Carbon Neutrality*, *Climate Policy*). This allows us to filter out general news noise and focus exclusively on the conceptual vocabulary surrounding energy topics.
 
 
 
