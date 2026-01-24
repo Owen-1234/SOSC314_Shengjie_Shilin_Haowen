@@ -39,8 +39,8 @@ We developed a Python-based Context Extractionn script that captures all tokens 
 ##  Repository Structure
 ```text
 ├── Data/
-│   ├── raw/                    # Original datasets
-│   └── processed/              # Weighted_Media_Comparison_Top25.csv
+│   ├── articles collected from different medias                    # Original datasets
+│   └── Frequency of different words around the three key words/              # Frequency.csv
 ├── Code/
 │   ├── 01_DataGathering.ipynb
 │   ├── 02_DataCleaning.ipynb
