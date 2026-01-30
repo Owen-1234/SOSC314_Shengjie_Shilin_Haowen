@@ -2,12 +2,12 @@
 ### A Cross-National Media Analysis (2020-2026)
 
 ##  Project Overview
-This project is the final capstone for SOSC 314: Computational Social Science at Duke Kunshan University. It explores the "narrative divide" between Western and Chinese media regarding climate policy and energy transition. By leveraging 7,000 news articles, we investigate how different national entities use language to frame responsibility, energy security, and the transition to a low-carbon future.
+This project is the final capstone for SOSC 314: Computational Social Science at Duke Kunshan University. It explores the "narrative divide" between Western and Chinese media regarding climate policy and energy transition. By leveraging 11,000 news articles, we investigate how different national entities use language to frame responsibility, energy security, and the transition to a low-carbon future.
 
 ---
 
 ##  Quick Links
-* **[Dataset](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Data)**: 7,000+ processed articles and Weighted Frequency results
+* **[Dataset](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Data)**: 11,000+ processed articles and Weighted Frequency results
 * **[Code](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Code)**: Scripts for Context Extraction (Sliding Window), Data Cleaning, and Visualization.
 * **[Visualizations](https://github.com/Owen-1234/SOSC314_Shengjie_Shilin_Haowen/tree/main/Image)**: High-res narrative comparison charts and Word Clouds.
 
