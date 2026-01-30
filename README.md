@@ -14,7 +14,7 @@ This project is the final capstone for SOSC 314: Computational Social Science at
 ---
 
 ##  Narrative Frequency Analysis & Measurement
-To ensure a fair comparison between the Chinese corpus (5,000 articles) and the Western corpus (2,000 articles), we implemented a Weighted Measurement Strategy 
+To ensure a fair comparison between the Chinese corpus (9,000 articles) and the Western corpus (2,000 articles), we implemented a Weighted Measurement Strategy 
 
 Instead of raw counts, we calculate the density of a concept per 1,000 articles:
 
