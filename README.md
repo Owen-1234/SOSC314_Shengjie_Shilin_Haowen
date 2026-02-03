@@ -73,8 +73,8 @@ Using a **Lexical Exclusivity Score**, this "Tornado Plot" identifies topics and
 │   ├── 02_DataCleaning.ipynb
 │   ├── 03_ContextExtraction.ipynb                  # Context-aware keyword mining
 │   ├── 04_Frequency_Visualization.ipynb            # Standardized bar charts
-│   ├── 05_STM_Modeling.py                          # DMR Model training logic
-│   └── 06_STM_Advanced_Visualization.py            # Network & Mirror plot scripts
+│   ├── 05_DMR_Modeling.py                          # DMR Model training logic
+│   └── 06_DMR_Advanced_Visualization.py            # Network & Mirror plot scripts
 ├── Image/
 │   ├── WordCloud.png
 │   ├── Frequency.png                               # Standardized comparison chart
