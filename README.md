@@ -28,7 +28,7 @@ We developed a Python-based **Context Extraction** script that captures all toke
 
 ---
 
-##  Structural Topic Modeling (STM) & Comparative Analysis
+##  Dirichlet Multinomial Regression & Comparative Analysis
 
 In the final phase of our analysis, we implemented a **DMR (Dirichlet Multinomial Regression)** model to quantify the narrative divergence. After testing , we determined **** to be the optimal granularity, providing the best balance between statistical fit (Log-Likelihood) and semantic distinctness.
 
