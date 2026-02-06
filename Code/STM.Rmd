@@ -1,0 +1,184 @@
+---
+title: "STM"
+output: html_document
+date: "2026-02-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+# Install & load required packages
+
+required_pkgs <- c(
+  "readr",
+  "dplyr",
+  "stm",
+  "stringr",
+  "ggplot2"
+)
+
+# Install missing packages
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_pkgs, installed)
+
+if (length(to_install) > 0) {
+  install.packages(to_install, dependencies = TRUE)
+}
+
+# Load packages
+invisible(lapply(required_pkgs, library, character.only = TRUE))
+
+cat("All required packages are installed and loaded.\n")
+
+```
+```{r}
+# STM (R) - K=20 ONLY
+
+library(readr)
+library(dplyr)
+library(stm)
+library(stringr)
+
+# Configuration
+#
+china_file <- "energy_narrative_C_cleaned.csv"
+uk_file    <- "energy_narrative_W_cleaned.csv"
+
+text_col   <- "cleaned_content"   
+out_dir    <- "stm_outputs_R_K20"
+dir.create(out_dir, showWarnings = FALSE)
+
+K <- 20
+seed_num <- 42
+
+# Load & merge data
+
+df_c <- read_csv(china_file, show_col_types = FALSE) %>% mutate(media = "China")
+df_w <- read_csv(uk_file,    show_col_types = FALSE) %>% mutate(media = "UK")
+df   <- bind_rows(df_c, df_w)
+
+stopifnot(text_col %in% names(df))
+stopifnot("media" %in% names(df))
+stopifnot("source" %in% names(df))
+
+df <- df %>%
+  mutate(text = as.character(.data[[text_col]])) %>%
+  mutate(text = str_squish(text)) %>%
+  filter(!is.na(text), text != "") %>%
+  mutate(
+    media   = as.factor(media),
+    source  = as.factor(source),
+    keyword = as.factor(keyword),
+    year    = as.integer(year)
+  )
+
+cat("Rows after merging + dropping empty text:", nrow(df), "\n")
+
+# Keep metadata + text (clean)
+meta <- df %>% select(media, source, keyword, year, text)
+
+# Text preprocessing for STM
+processed <- textProcessor(
+  documents = meta$text,
+  metadata  = meta,
+  lowercase = TRUE,
+  removestopwords = TRUE,
+  removenumbers = TRUE,
+  removepunctuation = TRUE,
+  stem = FALSE
+)
+
+out <- prepDocuments(
+  documents = processed$documents,
+  vocab     = processed$vocab,
+  meta      = processed$meta,
+  lower.thresh = 10
+)
+
+docs  <- out$documents
+vocab <- out$vocab
+meta2 <- out$meta
+
+cat("Docs used in STM:", length(docs), "\n")
+cat("Vocab size:", length(vocab), "\n")
+
+write_csv(meta2, file.path(out_dir, "metadata_after_prep.csv"))
+
+# Fit STM model (K=20)
+
+cat("\n===============================\n")
+cat("Fitting STM with K =", K, "\n")
+cat("===============================\n")
+
+set.seed(seed_num)
+
+stm_fit <- stm(
+  documents  = docs,
+  vocab      = vocab,
+  data       = meta2,
+  K          = K,
+  prevalence = ~ media + source + keyword + s(year),
+  max.em.its = 75,
+  init.type  = "Spectral",
+  verbose    = TRUE
+)
+
+saveRDS(stm_fit, file = file.path(out_dir, "stm_K20.rds"))
+
+# Output top words
+
+sink(file.path(out_dir, "K20_top_words.txt"))
+cat("STM model (R stm) | K = 20\n\n")
+print(labelTopics(stm_fit, n = 12))
+sink()
+
+# Export per-document topic proportions (theta)
+
+theta <- stm_fit$theta  # matrix: n_docs x K
+theta_df <- as.data.frame(theta)
+colnames(theta_df) <- paste0("topic_", 1:K)
+
+theta_df <- bind_cols(meta2 %>% select(media, source, keyword, year), theta_df)
+
+write_csv(theta_df, file.path(out_dir, "K20_theta.csv"))
+
+# Group summaries: mean theta by media and by source
+
+mean_by_media <- theta_df %>%
+  group_by(media) %>%
+  summarise(across(starts_with("topic_"), mean), n_docs = n(), .groups = "drop")
+
+write_csv(mean_by_media, file.path(out_dir, "K20_mean_theta_by_media.csv"))
+
+mean_by_source <- theta_df %>%
+  group_by(source) %>%
+  summarise(across(starts_with("topic_"), mean), n_docs = n(), .groups = "drop") %>%
+  arrange(desc(n_docs))
+
+write_csv(mean_by_source, file.path(out_dir, "K20_mean_theta_by_source.csv"))
+
+cat("\nDone. Outputs saved to:", out_dir, "\n")
+
+```
+
