@@ -1,0 +1,102 @@
+STM model (R stm) | K = 20
+
+Topic 1 Top Words:
+ 	 Highest Prob: market, bank, financial, yuan, investment, billion, bond, hong, year, company, fund, kong 
+ 	 FREX: bond, hong, kong, esg, bank, mainland, renminbi, index, yuan, asset, financial, banking 
+ 	 Lift: ipo, bourse, chinext, etf, renminbidenominated, renminbis, ashare, exchangetraded, northbound, renminbi, esg, guangdonghong 
+ 	 Score: hong, yuan, kong, bond, renminbi, bank, esg, ashare, financial, etf, investor, market 
+Topic 2 Top Words:
+ 	 Highest Prob: china, carbon, province, city, year, xinhua, beijing, green, service, neutrality, center, technology 
+ 	 FREX: exhibition, liang, web, venue, olympic, jun, tianjin, ciie, intelligent, xinhua, computing, olympics 
+ 	 Lift: zhangbei, chaoyang, chu, crrc, daxing, fiber, guizhous, icemaking, megacities, meituan, metaverse, minhang 
+ 	 Score: xinhua, ciie, china, province, beijing, yuan, exhibition, zhang, carbon, ciftis, liang, expo 
+Topic 3 Top Words:
+ 	 Highest Prob: emission, climate, carbon, coal, government, fuel, fossil, gas, cut, policy, world, energy 
+ 	 FREX: mine, offset, methane, heating, credit, found, scheme, coal, cut, tonne, mining, polluting 
+ 	 Lift: aemos, bahati, brine, geoengineering, lomborg, bjorn, decentralised, worthless, scarborough, cumbria, tailpipe, bleaching 
+ 	 Score: emission, coal, climate, fossil, less, carbon, fuel, heating, methane, gas, car, mine 
+Topic 4 Top Words:
+ 	 Highest Prob: european, europe, france, commission, union, green, french, macron, president, deal, member, climate 
+ 	 FREX: hungary, macron, der, european, von, leyen, spain, france, french, timmermans, europe, poland 
+ 	 Lift: bulgaria, der, frans, gozo, leyen, schengen, timmermans, budapest, czech, hungary, mep, meps 
+ 	 Score: european, macron, europe, leyen, chinaeu, der, france, von, brussels, hungary, timmermans, french 
+Topic 5 Top Words:
+ 	 Highest Prob: economic, economy, growth, year, policy, global, world, pandemic, percent, rate, recovery, covid 
+ 	 FREX: monetary, structural, gdp, imf, fiscal, inflation, economist, rate, stimulus, growth, outlook, recession 
+ 	 Lift: consumptiondriven, nomura, scarring, georgieva, accommodative, imf, kristalina, bretton, stagflation, blockage, beirne, berger 
+ 	 Score: growth, imf, monetary, inflation, percent, economic, rate, pandemic, economy, fiscal, gdp, recovery 
+Topic 6 Top Words:
+ 	 Highest Prob: energy, power, china, solar, wind, renewable, capacity, project, year, percent, electricity, clean 
+ 	 FREX: installed, hydropower, wind, grid, storage, ccus, solar, capacity, hydrogen, kilowatt, sinopec, gigawatts 
+ 	 Lift: hanyang, ultrahigh, aysha, bloombergnef, bloombergnefs, chunmei, cnoocs, coalbed, dapeng, daqing, driller, enn 
+ 	 Score: energy, china, solar, hydrogen, sinopec, percent, wind, renewable, power, electricity, photovoltaic, grid 
+Topic 7 Top Words:
+ 	 Highest Prob: biodiversity, water, forest, conservation, area, resource, land, environmental, protection, river, nature, ecosystem 
+ 	 FREX: specie, biodiversity, forest, forestry, grassland, wetland, wildlife, habitat, tree, conservation, animal, ecosystem 
+ 	 Lift: hydrological, greenovation, lancet, pest, precipitation, tributary, qinghaitibet, biodiverse, climatic, sahara, lancang, ecotourism 
+ 	 Score: biodiversity, forest, conservation, specie, river, water, grassland, ecosystem, ecological, tree, forestry, habitat 
+Topic 8 Top Words:
+ 	 Highest Prob: china, africa, african, south, country, development, chinese, world, continent, western, kenya, people 
+ 	 FREX: african, africa, kenya, commentchinadailycomcn, opinionchinadailycomcn, chinaafrica, ethiopia, writing, expertise, zambia, continent, send 
+ 	 Lift: moussa, ethiopia, sinoafrican, symbolizes, dakar, addis, johannesburg, namibia, kenyan, focac, greatpower, solheim 
+ 	 Score: africa, african, china, chinaafrica, kenya, commentchinadailycomcn, opinionchinadailycomcn, modernization, continent, juncao, ethiopia, chinese 
+Topic 9 Top Words:
+ 	 Highest Prob: germany, party, government, german, green, election, chancellor, vote, minister, country, policy, year 
+ 	 FREX: merkel, berlin, chancellor, scholz, colombia, angela, bosch, germany, german, olaf, cuba, nord 
+ 	 Lift: baerbock, bogota, bundestag, merkels, afd, annalena, cdu, deutschland, fdp, gustavo, habeck, merkel 
+ 	 Score: germany, merkel, chancellor, scholz, election, german, party, vote, berlin, spd, voter, bosch 
+Topic 10 Top Words:
+ 	 Highest Prob: china, development, chinese, people, party, national, year, system, country, central, effort, committee 
+ 	 FREX: cpc, civilization, communist, harmony, principle, philosophy, characteristic, socialism, upholding, ecoenvironmental, rejuvenation, mankind 
+ 	 Lift: huning, plenum, zedong, lawbased, rejuvenation, amity, chatterjee, cpcs, crested, crossstrait, dialectical, distinctively 
+ 	 Score: china, cpc, modernization, chinese, ecoenvironmental, party, development, civilization, socialism, ecoenvironment, rejuvenation, socialist 
+Topic 11 Top Words:
+ 	 Highest Prob: people, climate, view, right, fullscreen, time, photograph, like, crisis, court, government, many 
+ 	 FREX: court, fullscreen, photograph, police, read, child, lawsuit, supreme, image, attack, tory, indigenous 
+ 	 Lift: curated, harry, inbox, muslim, newsletterstheguardiancom, prison, sensation, sentenced, sex, violence, abortion, advertiser 
+ 	 Score: fullscreen, photograph, court, activist, tory, less, abortion, climate, lawsuit, adani, democracy, protest 
+Topic 12 Top Words:
+ 	 Highest Prob: carbon, china, green, emission, development, neutrality, energy, lowcarbon, industry, goal, system, effort 
+ 	 FREX: lowcarbon, carbon, peaking, intensity, peak, guideline, consumption, fiveyear, neutrality, dioxide, ecology, enterprise 
+ 	 Lift: assetbacked, jointstock, pbc, pboc, shangxi, weimin, relending, kebin, pbocs, carbontrading, highemission, jishengfor 
+ 	 Score: china, emission, carbon, lowcarbon, green, dioxide, pboc, development, neutrality, consumption, industry, percent 
+Topic 13 Top Words:
+ 	 Highest Prob: global, world, international, country, cooperation, development, economic, covid, president, economy, community, pandemic 
+ 	 FREX: vaccine, multilateralism, brics, apec, asiapacific, peace, openness, unilateralism, open, globalization, virus, equitable 
+ 	 Lift: putrajaya, stigmatization, cptpp, apec, apecs, chinafao, immunization, nondiscriminatory, relapse, zongze, covax, penh 
+ 	 Score: cooperation, multilateralism, apec, vaccine, brics, global, peace, globalization, unilateralism, wang, multilateral, governance 
+Topic 14 Top Words:
+ 	 Highest Prob: cooperation, country, development, two, economic, energy, initiative, project, partnership, road, trade, partner 
+ 	 FREX: saudi, arab, bri, arabia, partnership, uae, belt, cooperation, collaboration, bilateral, sco, initiative 
+ 	 Lift: arabia, aramcos, chinagcc, dhafra, fahad, gcc, mohammed, saud, uae, uaes, alajlan, arab 
+ 	 Score: cooperation, bri, saudi, arab, arabia, bilateral, uae, sco, partnership, chinaarab, belt, relation 
+Topic 15 Top Words:
+ 	 Highest Prob: china, global, market, chinese, company, technology, trade, vehicle, industry, investment, business, energy 
+ 	 FREX: indonesia, battery, manufacturer, vehicle, nev, chain, auto, automotive, manufacturing, automobile, cell, carmaker 
+ 	 Lift: baic, brazilchina, caam, ccpit, intraregional, mncs, bmw, antidumping, dongshu, exportbound, gac, gotion 
+ 	 Score: china, battery, chinese, company, vehicle, openingup, percent, market, electric, global, trade, industry 
+Topic 16 Top Words:
+ 	 Highest Prob: china, trump, biden, state, administration, united, policy, president, american, two, joe, order 
+ 	 FREX: biden, trump, bidens, kerry, joe, chinaus, republican, taiwan, washington, california, donald, manchin 
+ 	 Lift: pelosis, anchorage, bidenharris, kerrys, manchins, obamas, pew, rejoining, allison, blinken, breakingviews, manchin 
+ 	 Score: trump, biden, taiwan, kerry, republican, bidens, china, joe, chinaus, democrat, washington, manchin 
+Topic 17 Top Words:
+ 	 Highest Prob: australia, government, minister, australian, climate, morrison, labor, policy, target, national, zero, net 
+ 	 FREX: morrison, albanese, dutton, joyce, australian, queensland, australia, nsw, liberal, scott, canberra, bowen 
+ 	 Lift: brisbane, abbott, albaneses, backbench, berejiklian, bollock, canavan, collinsville, dutton, fitzgibbons, frontbench, frydenberg 
+ 	 Score: morrison, australia, australian, albanese, liberal, queensland, nsw, election, dutton, joyce, scott, voter 
+Topic 18 Top Words:
+ 	 Highest Prob: nuclear, steel, plant, power, japan, russia, reactor, unit, russian, safety, iron, technology 
+ 	 FREX: reactor, nuclear, steel, putin, furnace, iron, japanese, russian, japan, fukushima, tokyo, vladimir 
+ 	 Lift: abe, chernobyl, cisa, huludao, lange, novice, shinzo, tianwan, xudapu, dalusung, reactor, suga 
+ 	 Score: nuclear, steel, reactor, russian, russia, putin, plant, tianwan, unit, furnace, japan, fukushima 
+Topic 19 Top Words:
+ 	 Highest Prob: climate, change, country, global, world, action, china, emission, nation, cop, developing, paris 
+ 	 FREX: cop, paris, adaptation, guterres, action, glasgow, climate, change, xie, tackling, developing, mitigation 
+ 	 Lift: quantified, unfccc, belem, damilola, ndcs, nonco, stiell, redentor, climatevulnerable, mottley, dimitri, chunying 
+ 	 Score: climate, cop, paris, emission, glasgow, china, action, change, global, adaptation, developing, guterres 
+Topic 20 Top Words:
+ 	 Highest Prob: energy, gas, oil, company, fuel, fossil, price, transition, industry, investment, business, government 
+ 	 FREX: oil, shell, barrel, lng, shareholder, gas, profit, bps, drilling, fossil, pipeline, customer 
+ 	 Lift: bps, businessdesk, agm, baal, brent, cambo, equinor, ftse, looney, ofgem, windfall, barclays 
+ 	 Score: oil, gas, company, fossil, shell, fuel, energy, lng, bps, shareholder, barrel, price 
