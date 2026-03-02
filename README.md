@@ -31,72 +31,64 @@ We developed a Python-based **Context Extraction** script that captures all toke
 
 ##  Dirichlet Multinomial Regression & Comparative Analysis
 
-In the final phase of our analysis, we implemented a **DMR (Dirichlet Multinomial Regression)** model to quantify the narrative divergence. After testing , we determined **** to be the optimal granularity, providing the best balance between statistical fit (Log-Likelihood) and semantic distinctness.
+In the final phase of our analysis, we implemented a **DMR (Dirichlet Multinomial Regression)** model to quantify the narrative divergence. After testing , we determined K = 20 to be the optimal granularity, providing the best balance between statistical fit (Log-Likelihood) and semantic distinctness.
 
-### 🤖 Structural Topic Modeling (STM) Implementation
+### 🤖 Structural Topic Modeling (STM) Implementation: Core Methodology & Analytical Findings
 
-In addition to DMR, we utilized an **R-based STM pipeline** to further investigate how metadata influences topic prevalence.
+We employ the **Structural Topic Model (STM)** (Roberts et al., 2014) as the core analytical framework to uncover latent thematic patterns in cross-regional energy transition discourse (2020–2025), with optimal topic granularity set to **K=20** (balanced statistical robustness and interpretability).
 
-* **Model Configuration**: We fitted an STM with **K=20** topics using **Spectral initialization**.
-* **Prevalence Covariates**: The model estimates topic proportions based on:
-`Prevalence ~ media + source + keyword + s(year)`
-*The inclusion of `s(year)` (a spline function) allows us to capture the non-linear evolution of energy narratives over the 2020-2026 period.*
-* **Statistical Outputs**: We exported the **Theta matrix** to calculate the mean topic proportions across different media systems, enabling a rigorous comparative analysis.
+#### Key Model Design
+1. **Input Features**
+   - Textual: Document-Term Matrix (DTM) built from 20-word context windows around seed terms ("energy transition", "carbon neutrality", "climate policy"), with stopwords/numbers removed and no stemming (preserve semantic nuance of technical/political terminology).
+   - Covariates: Categorical (media region: China/Western; source; keyword) + Continuous (publication year) to structure topic priors and capture temporal dynamics.
+2. **Model Specification**
+   - Non-linear temporal modeling via spline functions ($f(Year_d)$) to address event-driven volatility in climate narratives (vs. linear constraints of Dirichlet-Multinomial Regression).
+   - Training: Deterministic Spectral Initialization, EM algorithm capped at 75 iterations; hyperparameter tuning across K=10/20/30 (K=10: over-broad topics; K=30: semantic noise).
 
-### Advanced Quantified Visualizations
+#### Core Findings
+1. **Cross-Regional Thematic Divergence** (Statistically validated via two-sample t-tests with Bonferroni correction, p<0.01)
+   - Chinese media: Emphasis on state-led implementation (Renewables & Hydrogen, Low-Carbon Policy, EVs & Batteries, CPC Governance) and international cooperation (Belt and Road, China-Africa partnerships).
+   - Western media: Focus on political contestation (Activism, Australian Politics), fossil fuel transition conflicts (Coal & Emissions, Oil & Gas), and regulatory debate.
+   - Shared focus: COP/Paris Talks (symbolic diplomatic significance).
 
-We decoded the energy discourse using two specialized computational social science visualizations:
+2. **Temporal Dynamics (2020–2025)**
+   - Group A (moderate-high baseline): Gradual trends (e.g., China-Africa Cooperation ↑, Global Macroeconomy ↓, Green Finance peaked in 2021).
+   - Group B (low baseline, high variability): Sharp fluctuations aligned with policy/events (e.g., EVs & Batteries ↑ post-2022, Low-Carbon Policy peaked in 2021, COP & Paris Talks episodic spikes).
+   - Overall trajectory: Early focus on energy security → mid-term policy consolidation → late emphasis on tech/industrial competition.
 
-#### 1. Topic Correlation Network (`topic_network_map.png`)
+#### Model Evaluation & Limitations
+- Evaluation: Multi-dimensional validation (pre-model lexical window analysis, structural differentiation, temporal coherence) — no predictive metrics (unsupervised task), focus on interpretability/coherence of thematic structures.
+- Limitations: Bag-of-words assumption (insensitive to tone/stance/causality); K=20 as a compromise (held-out likelihood ↑ with K, semantic coherence ↓ beyond K=20); corpus restricted to 4 major outlets (China Daily/People’s Daily; The Guardian/Reuters).
 
-This graph visualizes the "Narrative Web" by calculating the semantic connectivity (keyword overlap) between topics.
-
-* **Key Finding:** It reveals how *Renewable Energy* is structurally tied to *National Innovation* in the merged global discourse, forming a central narrative hub.
-
-#### 2. Region-Specific Mirror Analysis (`region_specific_mirror_plot.png`)
-
-Using a **Lexical Exclusivity Score**, this "Tornado Plot" identifies topics and keywords that are unique to each media group.
-
-* **China-Specific:** High exclusivity in topics involving `cpc, committee, modernization`, indicating a **State-led/Institutionalized** narrative.
-* **UK-Specific:** High exclusivity in topics involving `trump, biden, court, labor`, indicating a **Party-politics/Politicized** narrative.
-
----
-
-## Methodology & Tech Stack
-
-1. **Automated Collection:** Using `gdeltdoc` and `newspaper3k`.
-2. **Standardized Measurement:** Weighted frequency normalization to balance corpus sizes.
-3. **Context Mining:** Proximity-based extraction (20-word window) for narrative precision.
-4. **Topic Modeling:** Combined **DMR** (Python) and **Structural Topic Modeling** (R, `stm` package) for cross-verifying topic prevalence.
-5. **Visualization:** Matplotlib, Seaborn, NetworkX, and R's `ggplot2` for quantitative plotting.
+#### Future Work
+Expand media sources (diverse national/linguistic/genre coverage), extend time series post-2025, and integrate transformer-based models (stance classifiers/framing detectors) to complement STM’s shallow semantic analysis — moving from descriptive topic tracking to explanatory analysis of narrative construction.
 
 ---
 
 ##  Repository Structure
 
 ```text
-├── Data/
-│   ├── energy_narrative_C_cleaned.csv              # Cleaned Chinese data
-│   ├── energy_narrative_W_cleaned.csv              # Cleaned Western data
-│   ├── Frequency.csv                               # Word density results
-│   └── STM_topic_comparison.csv                    # Topic keywords for K=10, 20, 30
 ├── Code/
-│   ├── 01_DataGathering.ipynb
-│   ├── 02_DataCleaning.ipynb
-│   ├── 03_ContextExtraction.ipynb                  # Context-aware keyword mining
-│   ├── 04_Frequency_Visualization.ipynb            # Standardized bar charts
-│   ├── 05_DMR_Modeling.py                          # DMR Model training logic
-│   ├── 06_DMR_Advanced_Visualization.py            # Network & Mirror plot scripts
-│   └── 07_STM.Rmd                                  # STM implementation in R (K=20)
-├── stm_outputs_R_K20/                              # Generated by R script
-│   ├── K20_top_words.txt                           # Topic words & labels
-│   ├── K20_theta.csv                               # Document-topic distribution
-│   └── K20_mean_theta_by_media.csv                 # Regional mean proportions
+│   ├── DMR/                          # Scripts for Dirichlet Multinomial Regression modeling
+│   ├── Processing/                    # Data cleaning and preprocessing pipelines
+│   ├── STM/                           # Structural Topic Modeling implementation scripts
+│   ├── Scraping/                      # Web scraping and data collection utilities
+│   └── Readme.md                      # Documentation for the Code directory
+├── Data/
+│   ├── DMR/                           # Input/output data for the DMR model
+│   ├── STM/                           # Input/output data and results for the STM model
+│   ├── scraped/                       # Raw, unprocessed scraped news articles
+│   └── README.md                      # Documentation for the Data directory
 ├── Image/
-│   ├── WordCloud.png
-│   ├── Frequency.png                               # Standardized comparison chart
-│   ├── topic_network_map.png                       # Topic correlation graph
-│   └── region_specific_mirror_plot.png             # Regional exclusivity comparison
-└── README.md
+│   ├── 20-word_Media_Narrative_Comparison.png  # 20-word window media narrative comparison
+│   ├── DMR_region_specific_mirror_plot.png    # DMR region-specific lexical exclusivity mirror plot
+│   ├── DMR_topic_network_map.png              # DMR topic correlation network graph
+│   ├── STM_China-UK_comparison.png            # STM China-UK media narrative comparison
+│   ├── STM_HeatTopics.png         # STM topic heatmap visualization
+│   ├── Western_media_wordclouds.png  # Word cloud for Western media corpus 
+│   ├── chinese_media_wordclouds.png  # Word cloud for Chinese media corpus
+│   └── topic_time_series.rar      # Compressed archive of topic time series data
+├── 314Final.html                      # HTML version of the final project report
+└── README.md                          # Main project documentation and overview
 
 ```
